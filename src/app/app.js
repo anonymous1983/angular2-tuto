@@ -44,7 +44,7 @@ var AppComponent = (function () {
             styles: ["\n\t\t.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}\n\t\t.heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }\n\t\t.heroes li:hover {color: #369; background-color: #EEE; left: .2em;}\n\t\t.heroes .badge {\n\t\tfont-size: small;\n\t\tcolor: white;\n\t\tpadding: 0.1em 0.7em;\n\t\tbackground-color: #369;\n\t\tline-height: 1em;\n\t\tposition: relative;\n\t\tleft: -1px;\n\t\ttop: -1px;\n\t\t}\n\t\t.selected { background-color: #EEE; color: #369; }\n  \t"],
             selector: 'my-app',
             template: "\n\t\t\t<h1>{{title}}</h1>\n\t\t\t<div *ng-if=\"selectHero\">\n\t\t\t\t<h2>{{selectHero.name}} details!</h2>\n\t\t\t\t<div>\n\t\t\t\t\t<label>id: </label>{{selectHero.id}}\n\t\t\t\t</div>\n\t\t\t\t<div>\n\t\t\t\t\t<label>name: </label>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<input [(ng-model)]=\"selectHero.name\" placeholder=\"name\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<h2>My Heroes</h2>\n\t\t\t<ul class=\"heroes\">\n\t\t\t\t<li \n\t\t\t\t\t*ng-for=\"#hero of heroes; #i = index\" \n\t\t\t\t\t(click)=\"onSelectHero(hero)\"\n\t\t\t\t\t[ng-class]=\"getSelectedClass(hero)\">\n\t\t\t\t\t{{i + 1}} - <span class=\"badge\">{{hero.id}}</span> {{hero.name}}\n\t\t\t\t\t<!-- each hero goes here -->\n\t\t\t\t</li>\n\t\t\t</ul>\n\t\t\t",
-            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.NgFor, angular2_1.NgIf, angular2_1.NgClass]
+            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

@@ -1,4 +1,4 @@
-import {bootstrap, Component, FORM_DIRECTIVES, NgFor, NgIf, NgClass} from 'angular2/angular2';
+import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
 
 class Hero {
   id: number;
@@ -56,7 +56,7 @@ var HEROES: Hero[] = [
 				</li>
 			</ul>
 			`,
-	directives: [FORM_DIRECTIVES, NgFor, NgIf, NgClass]
+	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 
 
