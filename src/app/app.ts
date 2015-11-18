@@ -1,9 +1,6 @@
 import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Hero} from 'hero';
 
-class Hero {
-  id: number;
-  name: string;
-}
 var HEROES: Hero[] = [
 	{"id":11, "name": "Mr. Nice"},
 	{"id":12, "name": "Narco"},
@@ -13,6 +10,7 @@ var HEROES: Hero[] = [
 	{"id":16, "name": "RubberMan"},
 	{"id":17, "name": "Dynama"}
 ];
+
 @Component({
 	styles:[`
 		.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}
@@ -31,31 +29,7 @@ var HEROES: Hero[] = [
 		.selected { background-color: #EEE; color: #369; }
   	`],
     selector: 'my-app',
-    template: `
-			<h1>{{title}}</h1>
-			<div *ng-if="selectHero">
-				<h2>{{selectHero.name}} details!</h2>
-				<div>
-					<label>id: </label>{{selectHero.id}}
-				</div>
-				<div>
-					<label>name: </label>
-					<div>
-						<input [(ng-model)]="selectHero.name" placeholder="name">
-					</div>
-				</div>
-			</div>
-			<h2>My Heroes</h2>
-			<ul class="heroes">
-				<li 
-					*ng-for="#hero of heroes; #i = index" 
-					(click)="onSelectHero(hero)"
-					[ng-class]="getSelectedClass(hero)">
-					{{i + 1}} - <span class="badge">{{hero.id}}</span> {{hero.name}}
-					<!-- each hero goes here -->
-				</li>
-			</ul>
-			`,
+    templateUrl: 'app/page.tpl.html'
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 
@@ -68,6 +42,10 @@ class AppComponent {
     id: 1,
     name: 'Windstorm'
   };
+
+
+
+
   public heroes = HEROES;
 
   public selectHero: Hero;
@@ -77,7 +55,7 @@ class AppComponent {
   }
 
   getSelectedClass(hero: Hero){
-  return { 'selected': hero === this.selectHero }
+  	return { 'selected': hero === this.selectHero }
   }
 
 
