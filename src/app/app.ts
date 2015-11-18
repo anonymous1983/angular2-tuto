@@ -1,4 +1,4 @@
-import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+import {bootstrap, Component, FORM_DIRECTIVES, CORE_DIRECTIVES, ViewEncapsulation} from 'angular2/angular2';
 import {Hero} from 'hero';
 
 var HEROES: Hero[] = [
@@ -28,7 +28,7 @@ var HEROES: Hero[] = [
 		}
 		.selected { background-color: #EEE; color: #369; }
   	`],
-  	encapsulation: 'None',
+  	encapsulation: ViewEncapsulation.Emulated, // Don't provide any template or style encapsulation.
     selector: 'my-app',
     templateUrl: 'app/page.tpl.html'
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
