@@ -28,6 +28,7 @@ var HEROES: Hero[] = [
 		}
 		.selected { background-color: #EEE; color: #369; }
   	`],
+  	encapsulation: 'None',
     selector: 'my-app',
     templateUrl: 'app/page.tpl.html'
 	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
