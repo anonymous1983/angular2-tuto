@@ -18,7 +18,7 @@ var OtSite = (function () {
             selector: 'ot-site'
         }),
         angular2_1.View({
-            template: "\n    <div class=\"ot-site\">\n      <div class=\"ot-site--head\" head>\n        <img class=\"ot-site--logo\" src=\"//guestcenter.opentable.com/Content/img/icons/icon/2x/ot-logo-2x.png\">\n        <ng-content></ng-content>\n      </div>\n      <div class=\"ot-site--menu\" menu>\n        <ng-content select=\"[menu]\"></ng-content>\n      </div>\n      <div class=\"ot-site--body\" body>\n        <ng-content select=\"[body]\"></ng-content>\n      </div>\n      <div class=\"ot-site--foot\">\n        &copy; 2015 OpenTable, Inc.\n      </div>\n    </div>\n  "
+            template: "\n    <div class=\"ot-site\">\n      <div class=\"ot-site--head\" head>\n        <img class=\"ot-site--logo\" src=\"https://avatars3.githubusercontent.com/u/6102732?v=3&u=e0f439a4d82a39c752c41cf9312a5aa4352283ea&s=140\">\n        <ng-content></ng-content>\n      </div>\n      <div class=\"ot-site--menu\" menu>\n        <ng-content select=\"[menu]\"></ng-content>\n      </div>\n      <div class=\"ot-site--body\" body>\n        <ng-content select=\"[body]\"></ng-content>\n      </div>\n      <div class=\"ot-site--foot\">\n        &copy; 2015 OpenTable, Inc.\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], OtSite);

@@ -1,5 +1,6 @@
 import {bootstrap, Component, View, FORM_DIRECTIVES, CORE_DIRECTIVES, ViewEncapsulation} from 'angular2/angular2';
 import {Hero} from 'hero';
+import {OtSite} from 'app/ot-site';
 
 var HEROES: Hero[] = [
 {"id":11, "name": "Mr. Nice"},
@@ -32,9 +33,14 @@ var HEROES: Hero[] = [
 	}
 	.selected { background-color: #EEE; color: #369; }
 	`],
-	encapsulation: ViewEncapsulation.Emulated, // Don't provide any template or style encapsulation.
-	templateUrl: 'app/page.tpl.html',
-	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+	//encapsulation: ViewEncapsulation.Emulated, // Don't provide any template or style encapsulation.
+	//templateUrl: 'app/page.tpl.html',
+	template: `<ot-site>
+      <div head>I render in head.</div>
+      <div menu>I render in menu.</div>
+      <div body>I render in body.</div>
+   </ot-site>`
+	directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, OtSite]
 })
 
 // test commont

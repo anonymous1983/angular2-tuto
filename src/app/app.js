@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var ot_site_1 = require('app/ot-site');
 var HEROES = [
     { "id": 11, "name": "Mr. Nice" },
     { "id": 12, "name": "Narco" },
@@ -40,9 +41,10 @@ var AppComponent = (function () {
         }),
         angular2_1.View({
             styles: ["\n\t.heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}\n\t.heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }\n\t.heroes li:hover {color: #369; background-color: #EEE; left: .2em;}\n\t.heroes .badge {\n\t\tfont-size: small;\n\t\tcolor: white;\n\t\tpadding: 0.1em 0.7em;\n\t\tbackground-color: #369;\n\t\tline-height: 1em;\n\t\tposition: relative;\n\t\tleft: -1px;\n\t\ttop: -1px;\n\t}\n\t.selected { background-color: #EEE; color: #369; }\n\t"],
-            encapsulation: angular2_1.ViewEncapsulation.Emulated,
-            templateUrl: 'app/page.tpl.html',
-            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES]
+            //encapsulation: ViewEncapsulation.Emulated, // Don't provide any template or style encapsulation.
+            //templateUrl: 'app/page.tpl.html',
+            template: "<ot-site>\n      <div head>I render in head.</div>\n      <div menu>I render in menu.</div>\n      <div body>I render in body.</div>\n   </ot-site>",
+            directives: [angular2_1.FORM_DIRECTIVES, angular2_1.CORE_DIRECTIVES, ot_site_1.OtSite]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
