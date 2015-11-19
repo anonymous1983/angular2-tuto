@@ -1,26 +1,11 @@
 var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
-    env = require('gulp-env'),
     CONFIG = require('./.gulpfilec');
-
-var PATHS = {
-    src: {
-        js: 'src/**/*.ts',
-        html: 'src/**/*.html',
-        css: 'src/**/*.css'
-    },
-    lib: [
-        'node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
-        'node_modules/angular2/bundles/angular2.min.js',
-        'node_modules/systemjs/dist/system-csp-production.js'
-    ],
-    typings: 'node_modules/angular2/bundles/typings/angular2/angular2.d.ts'
-};
 
 gulp.task('clean', function (done) {
     var del = require('del');
-    del(['dist'], done);
+    del(CONFIG.PATHS.clean, done);
 });
 
 gulp.task('tstojs', function () {
@@ -36,19 +21,8 @@ gulp.task('tstojs', function () {
         }));
         //.pipe(concat('script.js'));
 
-        env({
-            vars: {
-              VP: 'js/'
-            }
-        });
-
     return tsResult.pipe(gulp.dest(CONFIG.PATHS.dist.js));
 });
-
-gulp.task('html', function () {
-    return gulp.src(CONFIG.PATHS.src.html).pipe(gulp.dest(CONFIG.APP_DIST));
-});
-
 
 gulp.task('lesstocss', function () {
 
@@ -68,9 +42,15 @@ gulp.task('lesstocss', function () {
     return lessCssResult;
 });
 
-gulp.task('libs', function () {
-    return gulp.src(PATHS.lib).pipe(gulp.dest('dist/js/lib'));
+gulp.task('html', function () {
+    return gulp.src(CONFIG.PATHS.src.html).pipe(gulp.dest(CONFIG.APP_DIST));
 });
+
+gulp.task('libs', function () {
+    return gulp.src(CONFIG.PATHS.lib).pipe(gulp.dest(CONFIG.PATHS.dist.lib));
+});
+
+gulp.task('build', ['libs', 'html', 'tstojs', 'lesstocss']);
 
 gulp.task('start', ['libs', 'html', 'tstojs', 'lesstocss'], function () {
     var http = require('http'),
@@ -80,13 +60,13 @@ gulp.task('start', ['libs', 'html', 'tstojs', 'lesstocss'], function () {
 
     var port = 9000, app;
 
-    gulp.watch(PATHS.src.html, ['html']);
+    gulp.watch(CONFIG.PATHS.src.html, ['html']);
     gulp.watch(CONFIG.PATHS.src.ts, ['tstojs']);
-    gulp.watch(PATHS.src.css, ['css']);
+    gulp.watch(CONFIG.PATHS.src.less, ['lesstocss']);
 
-    app = connect().use(serveStatic(__dirname + '/dist'));  // serve everything that is static
-    http.createServer(app).listen(port, function () {
-        open('http://localhost:' + port);
+    app = connect().use(serveStatic(__dirname + CONFIG.APP_BASE + CONFIG.APP_DIST));  // serve everything that is static
+    http.createServer(app).listen(CONFIG.PORT, function () {
+        open( CONFIG.APP_HOST + ':' + CONFIG.PORT);
     });
 });
 

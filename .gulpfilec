@@ -7,6 +7,7 @@ var argv = require('yargs').argv;
 var PORT = argv['port'] || 5555;
 var LIVE_RELOAD_PORT = argv['reload-port'] || 4002;
 var APP_BASE = argv['base'] || '/';
+var APP_HOST = argv['host'] || 'http://localhost';
 
 var APP_SRC = 'src';
 var APP_DIST = 'dist';
@@ -20,7 +21,7 @@ var PATHS = {
         sass: APP_DIST + '/sass',
         img: APP_DIST + '/img',
         html: APP_DIST + '/html',
-        lib: APP_DIST + '/lib',
+        lib: APP_DIST + '/js/lib',
     },
     src: {
         root: APP_SRC,
@@ -48,7 +49,7 @@ var PATHS = {
         ]
     },
     clean:[
-        APP_DIST + '/**'
+        APP_DIST
     ],
     lib: [
         'node_modules/angular2/node_modules/traceur/bin/traceur-runtime.js',
@@ -62,6 +63,7 @@ var CONFIG = {
     PORT: PORT,
     LIVE_RELOAD_PORT: LIVE_RELOAD_PORT,
     APP_BASE: APP_BASE,
+    APP_HOST: APP_HOST,
     APP_SRC: APP_SRC,
     APP_DIST: APP_DIST,
     PATHS: PATHS
