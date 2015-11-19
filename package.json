@@ -1,22 +1,30 @@
 {
-  "name": "angular2",
+  "name": "angular2-ot-site",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "angular2": "2.0.0-alpha.44",
-    "systemjs": "0.19.2"
+  "description": "ot-site example",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kara/angular2-ot-site.git"
   },
+  "bugs": {
+    "url": "https://github.com/kara/angular2-ot-site/issues"
+  },
+  "homepage": "https://github.com/kara/angular2-ot-site#readme",
   "devDependencies": {
-    "live-server": "^0.8.1",
-    "typescript": "^1.6.2"
+    "connect": "^3.4.0",
+    "del": "^1.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-env": "^0.2.0",
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^2.8.0",
+    "open": "0.0.5",
+    "serve-static": "^1.10.0",
+    "yargs": "^3.30.0"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc -p src -w",
-    "start": "live-server --open=src"
-  },
-  "keywords": [],
-  "author": "Anis ABID <anab.tn@gmail.com> (http://node-package.github.io/angular-tabs)",
-  "license": "ISC"
+  "dependencies": {
+    "angular2": "2.0.0-alpha.36",
+    "systemjs": "0.18.4"
+  }
 }

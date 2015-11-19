@@ -1,27 +1,31 @@
-<html>
-  <head>
-    <title>Angular 2 QuickStart</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular2 playground</title>
+</head>
 
-    <script src="../node_modules/systemjs/dist/system.src.js"></script>
-    <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
-    <script>
-        System.config({
-          packages: {'app': {defaultExtension: 'js'}}
-        });
-        System.import('app/app');
-    </script>
-  </head>
-  <body>
-    <my-app>loading...</my-app>
-    
+<body>
+  <app>Loading...</app>
+</body>
 
-    <h4>Test Style `encapsulation: 'None'`</h4>
-    <ul class="heroes">
-      <li >
-        <span class="badge">99</span> hero.name
-      </li>
-    </ul>
+<!-- ES6-related imports -->
+<script src="js/lib/traceur-runtime.js"></script>
+<script src="js/lib/system-csp-production.js"></script>
+<link rel="stylesheet" href="css/style.css">
 
-    
-  </body>
+<script>
+    //configure system loader
+    System.config({
+        baseURL: 'js',
+        defaultJSExtensions: true
+    });
+</script>
+<script src="js/lib/angular2.min.js"></script>
+
+<script>
+    //bootstrap the Angular2 application
+    System.import('app').catch(console.log.bind(console));
+</script>
+
 </html>
