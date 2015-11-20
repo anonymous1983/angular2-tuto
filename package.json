@@ -4,12 +4,12 @@
   "description": "ot-site example",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kara/angular2-ot-site.git"
+    "url": "git+https://github.com/anonymous1983/angular2-tuto.git"
   },
   "bugs": {
-    "url": "https://github.com/kara/angular2-ot-site/issues"
+    "url": "https://github.com/anonymous1983/angular2-tuto/issues"
   },
-  "homepage": "https://github.com/kara/angular2-ot-site#readme",
+  "homepage": "https://github.com/anonymous1983/angular2-tuto#readme",
   "devDependencies": {
     "connect": "^3.4.0",
     "del": "^1.2.0",
