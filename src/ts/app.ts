@@ -1,5 +1,9 @@
 import {Component, View, bootstrap} from 'angular2/angular2';
 import {OtSite} from 'ot-site';
+import {
+  RouteConfig,
+  ROUTER_DIRECTIVES
+} from 'angular2/router';
 
 @Component({
   selector: 'app'

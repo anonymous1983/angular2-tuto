@@ -10,7 +10,7 @@
 </body>
 
 <!-- ES6-related imports -->
-<script src="js/lib/traceur-runtime.js"></script>
+<script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.91/traceur-runtime.js"></script>
 <script src="js/lib/system-csp-production.js"></script>
 <link rel="stylesheet" href="css/style.css">
 
@@ -21,8 +21,8 @@
         defaultJSExtensions: true
     });
 </script>
-<script src="js/lib/angular2.min.js"></script>
-
+<script src="js/lib/angular2.js"></script>
+<script src="js/lib/router.dev.js"></script>
 <script>
     //bootstrap the Angular2 application
     System.import('app').catch(console.log.bind(console));
