@@ -1,7 +1,7 @@
 {
-  "name": "angular2-ot-site",
+  "name": "angular2-tuto",
   "version": "1.0.0",
-  "description": "ot-site example",
+  "description": "Tuto Angular2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/anonymous1983/angular2-tuto.git"
@@ -23,7 +23,14 @@
     "yargs": "^3.30.0"
   },
   "dependencies": {
-    "angular2": "2.0.0-alpha.36",
-    "systemjs": "0.18.4"
+    "angular2": "2.0.0-alpha.46",
+    "bootstrap": "^3.3.5",
+    "es6-module-loader": "^0.17.8",
+    "es6-shim": "^0.33.6",
+    "systemjs": "^0.19.4"
+  },
+   "scripts": {
+    "gulp": "gulp",
+    "start": "gulp clean && gulp start"
   }
 }

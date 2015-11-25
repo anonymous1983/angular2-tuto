@@ -8,6 +8,7 @@ var PORT = argv['port'] || 5555;
 var LIVE_RELOAD_PORT = argv['reload-port'] || 4002;
 var APP_BASE = argv['base'] || '/';
 var APP_HOST = argv['host'] || 'http://localhost';
+var APP_BROWSER =  "chrome"; // "chrome", "firefox")
 
 var APP_SRC = 'src';
 var APP_DIST = 'dist';
@@ -69,6 +70,7 @@ var CONFIG = {
     LIVE_RELOAD_PORT: LIVE_RELOAD_PORT,
     APP_BASE: APP_BASE,
     APP_HOST: APP_HOST,
+    APP_BROWSER: APP_BROWSER,
     APP_SRC: APP_SRC,
     APP_DIST: APP_DIST,
     PATHS: PATHS

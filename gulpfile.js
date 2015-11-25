@@ -66,7 +66,7 @@ gulp.task('start', ['libs', 'html', 'tstojs', 'lesstocss'], function () {
 
     app = connect().use(serveStatic(__dirname + CONFIG.APP_BASE + CONFIG.APP_DIST));  // serve everything that is static
     http.createServer(app).listen(CONFIG.PORT, function () {
-        open( CONFIG.APP_HOST + ':' + CONFIG.PORT);
+        open( CONFIG.APP_HOST + ':' + CONFIG.PORT, CONFIG.APP_BROWSER);
     });
 });
 
