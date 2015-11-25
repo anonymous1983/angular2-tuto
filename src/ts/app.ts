@@ -2,7 +2,8 @@ import {Component, View, bootstrap} from 'angular2/angular2';
 import {OtSite} from 'ot-site';
 import {
   RouteConfig,
-  ROUTER_DIRECTIVES
+  ROUTER_DIRECTIVES,
+  ROUTER_PROVIDERS  
 } from 'angular2/router';
 
 @Component({
