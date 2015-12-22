@@ -46,13 +46,17 @@ gulp.task('html', function () {
     return gulp.src(CONFIG.PATHS.src.html).pipe(gulp.dest(CONFIG.APP_DIST));
 });
 
+gulp.task('view', function () {
+    return gulp.src(CONFIG.PATHS.src.view).pipe(gulp.dest(CONFIG.PATHS.dist.view));
+});
+
 gulp.task('libs', function () {
     return gulp.src(CONFIG.PATHS.lib).pipe(gulp.dest(CONFIG.PATHS.dist.lib));
 });
 
-gulp.task('build', ['libs', 'html', 'tstojs', 'lesstocss']);
+gulp.task('build', ['libs', 'view', 'html', 'tstojs', 'lesstocss']);
 
-gulp.task('start', ['libs', 'html', 'tstojs', 'lesstocss'], function () {
+gulp.task('start', ['libs', 'view', 'html', 'tstojs', 'lesstocss'], function () {
     var http = require('http'),
         connect = require('connect'),
         serveStatic = require('serve-static'),
