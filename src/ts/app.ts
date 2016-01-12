@@ -1,4 +1,5 @@
-import {Component, View, bootstrap} from 'angular2/angular2';
+import {Component, View, bind} from 'angular2/core';
+import {bootstrap} from 'angular2/platform/browser';
 import {OtSite} from 'ot-site';
 import {
   RouteConfig,
