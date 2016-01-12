@@ -1,7 +1,9 @@
 var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
+    plumber = require('gulp-plumber'),
     CONFIG = require('./.gulpfilec');
+
 
 gulp.task('clean', function (done) {
     var del = require('del');
@@ -9,19 +11,19 @@ gulp.task('clean', function (done) {
 });
 
 gulp.task('tstojs', function () {
-    var typescript = require('gulp-typescript');
-    var tsResult = gulp.src(CONFIG.PATHS.src.ts)
-        
-        .pipe(typescript({
-            noImplicitAny: true,
-            module: 'system',
-            target: 'ES5',
-            emitDecoratorMetadata: true,
-            experimentalDecorators: true
-        }));
+    var typescript = require('gulp-typescript'),
+        sourcemaps = require('gulp-sourcemaps');
+    var tsProject = typescript.createProject('tsconfig.json');
+    var tsResult = gulp
+        .src(CONFIG.PATHS.src.ts)
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(typescript(tsProject));
         //.pipe(concat('script.js'));
 
-    return tsResult.pipe(gulp.dest(CONFIG.PATHS.dist.js));
+    return tsResult.js
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(CONFIG.PATHS.dist.js));
 });
 
 gulp.task('lesstocss', function () {

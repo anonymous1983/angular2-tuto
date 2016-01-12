@@ -28,9 +28,7 @@ var PATHS = {
     src: {
         root: APP_SRC,
         ts: [
-            APP_SRC + '/ts/**/*.ts',
-            'node_modules/angular2/angular2.d.ts',
-            'node_modules/angular2/router.d.ts'
+            APP_SRC + '/ts/**/*.ts'
         ],
         js: [
             APP_SRC + '/**/*.js'
